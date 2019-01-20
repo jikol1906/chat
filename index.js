@@ -1,8 +1,7 @@
-
-const jsonReader = require('jsonfile');
+const storeMessage = require('./storeMessages');
 const express = require('express');
 const socket = require('socket.io');
-const fs = require('fs');
+
 
 const app = express();
 
@@ -18,23 +17,9 @@ io.on('connection',(socket) => {
 
     socket.on('chat', (data) => {
 
-        jsonReader.readFile(__dirname + '/messages.json')
-            .then(({lastMessages}) => {
+        storeMessage(data);
 
-                console.log(lastMessages.length);
-
-                if(lastMessages.length >= 20) {
-                    lastMessages.shift();
-                }
-
-                lastMessages.push(data);
-
-                jsonReader.writeFile(__dirname + '/messages.json',{lastMessages})
-                    .then(res => console.log('complete'))
-                    .catch(error => console.log(error))
-            })
-            .catch(error => console.log(error));
-
+        console.log('done');
 
         io.sockets.emit('chat',data)
     });

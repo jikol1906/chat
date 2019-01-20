@@ -1,26 +1,6 @@
 {
   "lastMessages": [
     {
-      "message": "",
-      "handle": "fsef"
-    },
-    {
-      "message": "sef",
-      "handle": "fsef"
-    },
-    {
-      "message": "sef",
-      "handle": "fsef"
-    },
-    {
-      "message": "sef",
-      "handle": "fsef"
-    },
-    {
-      "message": "<h1>:0)</h1>",
-      "handle": "fsef"
-    },
-    {
       "message": "<h1 style=\"text-align:center;\">:0)</h1>",
       "handle": "fsef"
     },
@@ -76,5 +56,29 @@
       "message": "<h1 style=\"text-align:center; animation:scale 2s linear infinite\">Jo :0)</h1>",
       "handle": "fsef"
     },
+    {
+      "message": "Hej med dig",
+      "handle": "Boris"
+    },
+    {
+      "message": "Hej med dig",
+      "handle": "Boris"
+    },
+    {
+      "message": "Hej med dig",
+      "handle": "Boris"
+    },
+    {
+      "message": "Hej med dig",
+      "handle": "Boris"
+    },
+    {
+      "message": "Hvad så",
+      "handle": "Boris"
+    },
+    {
+      "message": "<img style=\"animation:scale 0.5s infinite\" src=\"http://files.shroomery.org/files/09-003/232179575-meatspin.gif\" alt=\"Smiley face\" height=\"500\" width=\"500\">",
+      "handle": "Boris"
+    }
   ]
 }
