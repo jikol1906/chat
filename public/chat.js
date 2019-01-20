@@ -35,4 +35,5 @@ socket.on('chat',(data) => {
 
 socket.on('typing',(data) => {
     feedback.innerHTML = '<p><em>'+data+' is typing a message...</em></p>'
+    chatWindow.scrollTop = chatWindow.scrollHeight;
 });
