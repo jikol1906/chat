@@ -6,7 +6,7 @@ const fs = require('fs');
 
 const app = express();
 
-const server = app.listen(4000,() => {
+const server = app.listen(process.env.PORT || '4000',() => {
     'listening on port 4000'
 });
 
