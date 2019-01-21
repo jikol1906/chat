@@ -75,8 +75,19 @@ input{
     transform: translate(0,-50%);
 }
 
+#mspin {
+    border-radius: 5px;
+    display: block;
+    background: #575ed8;
+    color: #fff;
+}
+
 .move {
     animation: move 6s linear;
+}
+
+h2 {
+    text-align: center;
 }
 
 @keyframes move {

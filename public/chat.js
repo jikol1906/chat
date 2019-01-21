@@ -4,7 +4,7 @@ const socket = io().emit('init');
 
 socket.on('init',(data) => {
     data.lastMessages.forEach(
-        ({message,handle}) => output.innerHTML += '<p><strong>'+handle+':</strong>'+message+'</p>')
+        ({message,handle}) => output.innerHTML += '<p><strong>'+handle+':</strong>'+message+' :0)</p>')
 
     chatWindow.scrollTop = chatWindow.scrollHeight;
 })
@@ -30,17 +30,31 @@ $('#mspin').click(() => {
 });
 
 
+$("#message").on('keyup', function (e) {
 
+    const key = e.which || e.keyCode || 0;
 
-
-
+    if (key === 13) {
+        sendMsg();
+    }
+});
 
 send.addEventListener('click',() => {
+    sendMsg();
+});
+
+function sendMsg() {
+    const removeStyleTag = message.value
+        .replace('<style>','')
+        .replace('</style>','')
+
     socket.emit('chat',{
-        message:message.value,
+        message:message.value.replace('<style>','').replace('</style>',''),
         handle:handle.value
     })
-});
+
+    message.value = '';
+}
 
 message.addEventListener('keypress',() => {
     socket.emit('typing',handle.value)
