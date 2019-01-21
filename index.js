@@ -1,3 +1,5 @@
+const jsonReader = require('jsonfile')
+
 const storeMessage = require('./storeMessages');
 const express = require('express');
 const socket = require('socket.io');
@@ -29,13 +31,13 @@ io.on('connection',(socket) => {
         socket.broadcast.emit('typing',data)
     })
 
-    /*socket.on('init',() => {
+    socket.on('init',() => {
 
         jsonReader.readFile(__dirname + '/messages.json')
             .then(lastMessages => socket.emit('init',lastMessages))
             .catch(err =>  console.log(err))
 
-    })*/
+    })
 
 
 });
