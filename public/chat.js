@@ -16,6 +16,25 @@ const send = document.getElementById('send');
 const output = document.getElementById('output');
 const feedback = document.getElementById('feedback');
 
+
+$('#mspin').click(() => {
+
+    const img = $('#mspin-img');
+
+    if(img.hasClass('move')) {
+        img.removeClass('move')
+
+    } else {
+        img.addClass('move')
+    }
+});
+
+
+
+
+
+
+
 send.addEventListener('click',() => {
     socket.emit('chat',{
         message:message.value,
@@ -28,7 +47,7 @@ message.addEventListener('keypress',() => {
 });
 
 socket.on('chat',(data) => {
-    output.innerHTML += '<p><strong>'+data.handle+':</strong>'+data.message+'</p>';
+    output.innerHTML += '<p><strong>'+data.handle+':</strong>'+data.message+' :0)</p>';
     feedback.innerHTML = "";
     chatWindow.scrollTop = chatWindow.scrollHeight;
 });

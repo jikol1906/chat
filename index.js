@@ -21,15 +21,15 @@ io.on('connection',(socket) => {
 
         storeMessage(data);
 
-        console.log('done');
-
         io.sockets.emit('chat',data)
     });
 
 
     socket.on('typing',(data) => {
         socket.broadcast.emit('typing',data)
-    })
+    });
+
+
 
     socket.on('init',() => {
 
