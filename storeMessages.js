@@ -2,7 +2,7 @@ const jsonReader = require('jsonfile');
 
 
 
-module.exports.write = function(data) {
+module.exports = function(data) {
     jsonReader.readFile(__dirname + '/messages.json')
         .then(({lastMessages}) => {
 
